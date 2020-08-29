@@ -9,3 +9,12 @@ class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
+
+class ViewProfile(generic.DetailView):
+    model = CustomUser
+    template_name = 'Profileinfo/profile.html'
+    context_object_name = 'Profileinfo'
+
+    def get_object(self):
+        return CustomUser.objects.all()
+
