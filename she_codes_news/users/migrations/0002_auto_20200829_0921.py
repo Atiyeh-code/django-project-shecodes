@@ -10,11 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='customuser',
-            name='Email',
-            field=models.CharField(default='', max_length=100),
-        ),
         migrations.AlterField(
             model_name='customuser',
             name='first_name',

@@ -6,11 +6,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
 {% endblock %}
 
-    {% block content %}
+{% block content %}
    <h2>Latest News</h2>
+   {% if user.is_authenticated %}
    <h3><a href="{% url 'news:newStory' %}">Write New Story</a></h3>
-
-
+   
     <div id="latest-stories">
         {% if latest_stories %}
             {% for story in latest_stories %}
@@ -30,5 +30,25 @@
             <p>No stories are available.</p>
         {% endif %}
     </div>
+    {% else %}
+    <div id="latest-stories">
+        {% if latest_stories %}
+            {% for story in latest_stories %}
+                {% include "./storyCard.html" with story=story position=forloop.counter %}
+            {% endfor %}
+        {% else %}
+            <p>No stories are available.</p>
+        {% endif %}
+    </div>
 
-    {% endblock %}
+    <div id="all-stories">
+        {% if latest_stories %}
+            {% for story in all_stories %}
+               {% include "./storyCard.html" with story=story %}
+            {% endfor %}
+        {% else %}
+            <p>No stories are available.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+{% endblock %}

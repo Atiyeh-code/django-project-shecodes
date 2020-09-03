@@ -2,6 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
+from django.http import HttpResponseRedirect
 
 
 class IndexView(generic.ListView):
@@ -31,3 +32,27 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class DeleteStoryView(generic.DeleteView):
+    template_name = 'news/delete.html'
+    model = NewsStory
+    success_url = reverse_lazy('news:index')
+
+class UpdateStoryView(generic.UpdateView):
+    template_name = 'news/update.html'
+    model = NewsStory
+    fields = ['title' , 'author' , 'content']
+
+    def get_object(self, queryset=None):
+        id = self.kwargs['pk']
+        return self.model.objects.get(id=id)
+
+    def form_valid(self, form):
+        form.save()
+        return HttpResponseRedirect(reverse_lazy('news:index'))
+
+
+
+
+    
+
