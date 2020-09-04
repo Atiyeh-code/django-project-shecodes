@@ -15,8 +15,8 @@
         {{ story.content|linebreaks }}
     </div>
     <div>
-    <h3><a href= "{% url 'news:deleteStory' story.id %}">Delete Story</a></h3>
-    <h3><a href= "{% url 'news:updateStory' story.id %}">Update Story</a></h3>
+        <h2><a href= "{% url 'news:deleteStory' story.id %}">Delete Story</a></h2>
+        <h2><a href= "{% url 'news:updateStory' story.id %}">Update Story</a></h2>
     </div>
 </div>
 

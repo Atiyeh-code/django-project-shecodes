@@ -10,5 +10,5 @@ class NewsStory(models.Model):
     pub_date = models.DateTimeField()
     content = models.TextField()
     image_url = models.CharField(max_length=200, default='')
-
+    category_story = models.CharField(max_length=200, default= '')
    

@@ -8,7 +8,7 @@ urlpatterns = [
     path(
         'create-account/',
         CreateAccountView.as_view(),
-        name='CreateAccount'
+        name='createAccount'
     ),
     path(
         'view-profile/',

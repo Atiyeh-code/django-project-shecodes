@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: #C6F8E5
 }
 
 header {
@@ -12,22 +12,22 @@ header {
 }
 
 img {
-    filter: grayscale(100%);
+    filter: grayscale(0%);
 }
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: "Gill Sans", sans-serif;
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+   font-family: "Gill Sans", sans-serif;
 }
 
 h3 {
-    font-size: 2rem;
+    /* font-size: 1rem; */
     margin: 0;
 }
 
@@ -50,5 +50,68 @@ a {
 }
 
 a, p {
-    font-family: monospace;
+    font-family: "Gill Sans", sans-serif;
 }
+
+/* Menu */
+
+.nav-menu {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.nav-menu a:hover {
+    color: green;
+}
+
+/* Form */
+form {
+    margin: 50px auto;
+    width: 90%;
+}
+
+.form-item p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.form-item label {
+    flex-basis: 150px;
+    font-size: 22px;
+}
+
+.form-item input,
+.form-item textarea {
+    flex-basis: 50%;
+    border: 2px solid #ffc305;
+    justify-content: center;
+}
+
+.form-item input:hover,
+.form-item textarea:hover {
+    border: 2px solid greenyellow;
+    justify-content: center;
+}
+
+.form-item input,
+.form-item textarea,
+.form-item button {
+    border: 2px solid green;
+    background-color: #FFF;
+    padding: 5px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.form-item button:hover {
+    border: 2px solid green;
+    background-color: green;
+    color: #FFF;
+    justify-content: center;
+} 
+
